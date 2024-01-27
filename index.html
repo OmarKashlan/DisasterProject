@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!--رابط تحديد الموقع-->
+    <link rel="stylesheet" href="style.css" />
+    <!--ربط CSS خارجي-->
+    <script src="main.js"></script>
+    <!--ربط JS خارجي-->
+</head>
+
+<body>
+    <h1 id="title">منبّه الكوارث الطبيعية</h1>
+    <!-- العنوان -->
+
+    <div id="button-container">
+        <!-- مكان تواجد الازرار -->
+        <div class="select-button" onclick="sendMessage('زلزال')">
+            <div class="button-text">زلزال</div>
+            <!-- الاسم الذي على الزر مع وظيفة الضغط عليه وارسال رسالة -->
+        </div>
+        <div class="select-button" onclick="sendMessage('بركان')">
+            <div class="button-text">بركان</div>
+        </div>
+        <div class="select-button" onclick="sendMessage('فيضان')">
+            <div class="button-text">فيضان</div>
+        </div>
+        <div class="select-button" onclick="sendMessage('حريق')">
+            <div class="button-text">حريق</div>
+        </div>
+        <div class="select-button" onclick="sendMessage('تسونامي')">
+            <div class="button-text">تسونامي</div>
+        </div>
+        <div class="select-button" onclick="sendMessage('إعصار')">
+            <div class="button-text">إعصار</div>
+        </div>
+        <div class="select-button" onclick="sendMessage('انهيار للتربة')">
+            <div class="button-text">انهيارالتربة</div>
+        </div>
+    </div>
+
+    <div id="notification">تم إرسال الرسالة من أجل الكارثة!</div>
+    <!-- الاشعار -->
+    <div id="location"></div>
+    <!-- الموقع -->
+
+    <div id="map-container">
+        <!-- مكان تواجد الخريطة -->
+        <div id="loading-overlay">
+            <!-- تحميل الصفحة -->
+            <div class="loading-spinner"></div>
+            <!-- الدائرة التي تدور اثناء التحميل -->
+        </div>
+        <div id="map"></div>
+        <!-- الخريطة -->
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- عمليتي الايميل والموقع -->
+</body>
+
+</html>
